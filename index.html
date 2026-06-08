@@ -22,8 +22,8 @@
         <a class="nav-brand" href="#top">DRPO</a>
         <nav class="nav-links" aria-label="Primary">
           <a href="#abstract">Abstract</a>
-          <a href="#results">Results</a>
-          <a href="#scenes">Experiments</a>
+          <a href="#overview-video">Overview Video</a>
+          <a href="#scenes">Scene Experiments</a>
         </nav>
       </div>
     </header>
@@ -58,8 +58,8 @@
             <a class="pill-button pill-button-light" href="#abstract"
               >Abstract</a
             >
-            <a class="pill-button pill-button-light" href="#results"
-              >Video Highlights</a
+            <a class="pill-button pill-button-light" href="#scenes"
+              >Scene-Based Experiments</a
             >
           </div>
         </div>
@@ -69,9 +69,6 @@
         <div class="container is-max-desktop reveal">
           <div class="video-frame video-frame-large">
             <video
-              autoplay
-              muted
-              loop
               controls
               playsinline
               poster="./assets/clips/teaser.jpg"
@@ -119,13 +116,12 @@
         </div>
       </section>
 
-      <section class="section section-light" id="results">
+      <section class="section section-light" id="overview-video">
         <div class="container reveal">
-          <h2 class="section-title">Video Highlights</h2>
+          <h2 class="section-title">Overview Video</h2>
           <p class="section-lead">
-            The supplementary video is split into thematic sections for easier
-            browsing, following the project-page presentation style used by
-            pages like Nerfies.
+            This narrated segment introduces the motivation behind DRPO and
+            summarizes the reward-guided policy optimization pipeline.
           </p>
 
           <div class="video-grid">
@@ -141,9 +137,6 @@
               </div>
               <div class="video-frame">
                 <video
-                  autoplay
-                  muted
-                  loop
                   controls
                   playsinline
                   poster="./assets/clips/motivation-method.jpg"
@@ -163,12 +156,13 @@
         <div class="container reveal">
           <h2 class="section-title">Scene-Based Experiments</h2>
           <p class="section-lead">
-            The remaining clips are organized from simpler referential commands
-            to harder relational reasoning cases in cluttered environments.
+            The grasping demonstrations are reorganized into three difficulty
+            levels. Each block shows a static scene setup followed by a silent
+            GIF of the grasp execution without subtitles.
           </p>
 
-          <div class="video-grid">
-            <article class="video-card">
+          <div class="scene-stack">
+            <article class="scene-block">
               <div class="video-card-copy">
                 <p class="video-card-label">Simple</p>
                 <h3>Single-step spatial grounding</h3>
@@ -177,24 +171,25 @@
                   policy grounds language to a target object and grasp pose.
                 </p>
               </div>
-              <div class="video-frame">
-                <video
-                  autoplay
-                  muted
-                  loop
-                  controls
-                  playsinline
-                  poster="./assets/clips/simple-scenes.jpg"
-                >
-                  <source
-                    src="./assets/clips/simple-scenes.mp4"
-                    type="video/mp4"
+              <div class="scene-media-group">
+                <figure class="scene-figure">
+                  <figcaption>Scene setup</figcaption>
+                  <img
+                    src="./assets/clips/simple-intro.jpg"
+                    alt="Simple scene setup for language-driven grasping."
                   />
-                </video>
+                </figure>
+                <figure class="scene-figure">
+                  <figcaption>Grasp execution (silent GIF)</figcaption>
+                  <img
+                    src="./assets/clips/simple-demo.gif"
+                    alt="Simple grasp execution without subtitles."
+                  />
+                </figure>
               </div>
             </article>
 
-            <article class="video-card">
+            <article class="scene-block">
               <div class="video-card-copy">
                 <p class="video-card-label">Basic</p>
                 <h3>Object references with stronger interference</h3>
@@ -203,73 +198,49 @@
                   separation between candidate objects in the same workspace.
                 </p>
               </div>
-              <div class="video-frame">
-                <video
-                  autoplay
-                  muted
-                  loop
-                  controls
-                  playsinline
-                  poster="./assets/clips/basic-scenes.jpg"
-                >
-                  <source
-                    src="./assets/clips/basic-scenes.mp4"
-                    type="video/mp4"
+              <div class="scene-media-group">
+                <figure class="scene-figure">
+                  <figcaption>Scene setup</figcaption>
+                  <img
+                    src="./assets/clips/basic-intro.jpg"
+                    alt="Basic scene setup examples for robotic grasping."
                   />
-                </video>
+                </figure>
+                <figure class="scene-figure">
+                  <figcaption>Grasp execution (silent GIF)</figcaption>
+                  <img
+                    src="./assets/clips/basic-demo.gif"
+                    alt="Basic grasp execution without subtitles."
+                  />
+                </figure>
               </div>
             </article>
 
-            <article class="video-card">
+            <article class="scene-block">
               <div class="video-card-copy">
-                <p class="video-card-label">Advanced I</p>
+                <p class="video-card-label">Advanced</p>
                 <h3>Relational reasoning among multiple similar objects</h3>
                 <p>
-                  The robot must disambiguate targets by combining spatial
-                  relations with semantic grounding under heavier clutter.
+                  These harder scenes require fine-grained relational reasoning
+                  under dense clutter, near-duplicate objects, and constrained
+                  placements.
                 </p>
               </div>
-              <div class="video-frame">
-                <video
-                  autoplay
-                  muted
-                  loop
-                  controls
-                  playsinline
-                  poster="./assets/clips/advanced-scenes-a.jpg"
-                >
-                  <source
-                    src="./assets/clips/advanced-scenes-a.mp4"
-                    type="video/mp4"
+              <div class="scene-media-group">
+                <figure class="scene-figure">
+                  <figcaption>Scene setup</figcaption>
+                  <img
+                    src="./assets/clips/advanced-intro.jpg"
+                    alt="Advanced scene setup examples for robotic grasping."
                   />
-                </video>
-              </div>
-            </article>
-
-            <article class="video-card">
-              <div class="video-card-copy">
-                <p class="video-card-label">Advanced II</p>
-                <h3>Dense clutter with fine-grained target disambiguation</h3>
-                <p>
-                  This final section highlights more difficult scenes where
-                  near-duplicate objects and constrained placements stress the
-                  policy’s ranking behavior.
-                </p>
-              </div>
-              <div class="video-frame">
-                <video
-                  autoplay
-                  muted
-                  loop
-                  controls
-                  playsinline
-                  poster="./assets/clips/advanced-scenes-b.jpg"
-                >
-                  <source
-                    src="./assets/clips/advanced-scenes-b.mp4"
-                    type="video/mp4"
+                </figure>
+                <figure class="scene-figure">
+                  <figcaption>Grasp execution (silent GIF)</figcaption>
+                  <img
+                    src="./assets/clips/advanced-demo.gif"
+                    alt="Advanced grasp execution without subtitles."
                   />
-                </video>
+                </figure>
               </div>
             </article>
           </div>

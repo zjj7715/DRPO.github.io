@@ -249,6 +249,49 @@ video {
   grid-column: 1 / -1;
 }
 
+.scene-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 2rem;
+}
+
+.scene-block {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
+}
+
+.scene-media-group {
+  display: grid;
+  gap: 18px;
+}
+
+.scene-figure {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.scene-figure figcaption {
+  font-family: "Google Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.scene-figure img {
+  width: 100%;
+  border: 1px solid #d9dbe1;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(17, 24, 39, 0.08);
+}
+
 .video-card-copy {
   display: grid;
   gap: 8px;
