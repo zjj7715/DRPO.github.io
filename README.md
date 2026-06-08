@@ -33,9 +33,6 @@ The site expects these files:
 - `assets/script.js`
 - `assets/clips/teaser.mp4`
 - `assets/clips/motivation-method.mp4`
-- `assets/clips/simple-intro.jpg`
-- `assets/clips/basic-intro.jpg`
-- `assets/clips/advanced-intro.jpg`
-- `assets/clips/simple-demo.gif`
-- `assets/clips/basic-demo.gif`
-- `assets/clips/advanced-demo.gif`
+- `assets/clips/simple-application.mp4`
+- `assets/clips/basic-application.mp4`
+- `assets/clips/advanced-application.mp4`

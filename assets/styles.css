@@ -159,17 +159,6 @@ video {
   opacity: 0.75;
 }
 
-.coming-soon-tag {
-  margin-left: 8px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: #eef2ff;
-  color: #374151;
-  font-size: 0.76rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
 .teaser-section {
   padding: 0 0 1rem;
 }
@@ -190,15 +179,6 @@ video {
 
 .video-frame-large video {
   aspect-ratio: 16 / 9;
-}
-
-.teaser-caption {
-  margin: 1rem auto 0;
-  max-width: 760px;
-  text-align: center;
-  color: #4b5563;
-  line-height: 1.7;
-  font-size: 1rem;
 }
 
 .section {
@@ -280,32 +260,6 @@ video {
   border-radius: 20px;
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
-}
-
-.scene-media-group {
-  display: grid;
-  gap: 18px;
-}
-
-.scene-figure {
-  margin: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.scene-figure figcaption {
-  font-family: "Google Sans", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #374151;
-}
-
-.scene-figure img {
-  width: 100%;
-  border: 1px solid #d9dbe1;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 14px 35px rgba(17, 24, 39, 0.08);
 }
 
 .video-card-copy {
