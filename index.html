@@ -23,7 +23,7 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="#abstract">Abstract</a>
           <a href="#overview-video">Overview Video</a>
-          <a href="#scenes">Scene Experiments</a>
+          <a href="#scenes">Real Robot Applications</a>
         </nav>
       </div>
     </header>
@@ -58,8 +58,15 @@
             <a class="pill-button pill-button-light" href="#abstract"
               >Abstract</a
             >
+            <a
+              class="pill-button pill-button-light is-disabled"
+              href="#top"
+              aria-disabled="true"
+              tabindex="-1"
+              >Code <span class="coming-soon-tag">Coming Soon</span></a
+            >
             <a class="pill-button pill-button-light" href="#scenes"
-              >Scene-Based Experiments</a
+              >Real Robot Applications</a
             >
           </div>
         </div>
@@ -154,33 +161,22 @@
 
       <section class="section" id="scenes">
         <div class="container reveal">
-          <h2 class="section-title">Scene-Based Experiments</h2>
-          <p class="section-lead">
-            The grasping demonstrations are reorganized into three difficulty
-            levels. Each block shows a static scene setup followed by a silent
-            GIF of the grasp execution without subtitles.
-          </p>
+          <h2 class="section-title">Real Robot Applications</h2>
 
           <div class="scene-stack">
             <article class="scene-block">
               <div class="video-card-copy">
                 <p class="video-card-label">Simple</p>
-                <h3>Single-step spatial grounding</h3>
-                <p>
-                  Short instructions with fewer distractors illustrate how the
-                  policy grounds language to a target object and grasp pose.
-                </p>
               </div>
               <div class="scene-media-group">
                 <figure class="scene-figure">
-                  <figcaption>Scene setup</figcaption>
                   <img
                     src="./assets/clips/simple-intro.jpg"
-                    alt="Simple scene setup for language-driven grasping."
+                    alt="Simple application example for language-driven grasping."
                   />
                 </figure>
                 <figure class="scene-figure">
-                  <figcaption>Grasp execution (silent GIF)</figcaption>
+                  <figcaption>Grasp execution</figcaption>
                   <img
                     src="./assets/clips/simple-demo.gif"
                     alt="Simple grasp execution without subtitles."
@@ -192,22 +188,16 @@
             <article class="scene-block">
               <div class="video-card-copy">
                 <p class="video-card-label">Basic</p>
-                <h3>Object references with stronger interference</h3>
-                <p>
-                  These cases include richer object layouts and require cleaner
-                  separation between candidate objects in the same workspace.
-                </p>
               </div>
               <div class="scene-media-group">
                 <figure class="scene-figure">
-                  <figcaption>Scene setup</figcaption>
                   <img
                     src="./assets/clips/basic-intro.jpg"
-                    alt="Basic scene setup examples for robotic grasping."
+                    alt="Basic application examples for robotic grasping."
                   />
                 </figure>
                 <figure class="scene-figure">
-                  <figcaption>Grasp execution (silent GIF)</figcaption>
+                  <figcaption>Grasp execution</figcaption>
                   <img
                     src="./assets/clips/basic-demo.gif"
                     alt="Basic grasp execution without subtitles."
@@ -219,23 +209,16 @@
             <article class="scene-block">
               <div class="video-card-copy">
                 <p class="video-card-label">Advanced</p>
-                <h3>Relational reasoning among multiple similar objects</h3>
-                <p>
-                  These harder scenes require fine-grained relational reasoning
-                  under dense clutter, near-duplicate objects, and constrained
-                  placements.
-                </p>
               </div>
               <div class="scene-media-group">
                 <figure class="scene-figure">
-                  <figcaption>Scene setup</figcaption>
                   <img
                     src="./assets/clips/advanced-intro.jpg"
-                    alt="Advanced scene setup examples for robotic grasping."
+                    alt="Advanced application examples for robotic grasping."
                   />
                 </figure>
                 <figure class="scene-figure">
-                  <figcaption>Grasp execution (silent GIF)</figcaption>
+                  <figcaption>Grasp execution</figcaption>
                   <img
                     src="./assets/clips/advanced-demo.gif"
                     alt="Advanced grasp execution without subtitles."
@@ -250,10 +233,6 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>
-          Website adapted for the DRPO project page with a presentation style
-          inspired by academic demo sites.
-        </p>
         <a href="#top">Back to top</a>
       </div>
     </footer>
