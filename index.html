@@ -11,249 +11,281 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#top">DRPO</a>
+    <header class="site-nav">
+      <div class="container nav-inner">
+        <a class="nav-brand" href="#top">DRPO</a>
         <nav class="nav-links" aria-label="Primary">
           <a href="#abstract">Abstract</a>
-          <a href="#highlights">Highlights</a>
-          <a href="#video">Video</a>
-          <a href="#paper">Paper</a>
-          <a href="#citation">BibTeX</a>
+          <a href="#results">Results</a>
+          <a href="#scenes">Experiments</a>
         </nav>
-      </header>
+      </div>
+    </header>
 
-      <main id="top">
-        <section class="hero">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">IEEE TMM Project Page</p>
-            <h1>
-              Discriminative Reward Policy Optimization for Relational
-              Reasoning in Language-Driven Robotic Grasping
-            </h1>
-            <p class="subtitle">
-              A reinforcement learning framework that turns top-k grasp
-              selection into a reward-driven reasoning problem for cluttered,
-              language-conditioned robotic manipulation.
-            </p>
+    <main id="top">
+      <section class="hero-section">
+        <div class="container hero-content reveal">
+          <h1 class="publication-title">
+            Discriminative Reward Policy Optimization for Relational Reasoning
+            in Language-Driven Robotic Grasping
+          </h1>
 
-            <div class="authors">
-              <span>Yan Li</span>
-              <span>Junjie Zheng</span>
-              <span>Yuhang He</span>
-              <span>Junnan Xu</span>
-              <span>Wenbin Lu</span>
-              <span>Shengjie Yang</span>
-              <span>Jianwei Zheng</span>
-            </div>
-
-            <p class="affiliation">
-              College of Computer Science and Technology, Zhejiang University
-              of Technology
-            </p>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="./assets/drpo-paper.pdf"
-                >Paper PDF</a
-              >
-              <a class="button button-secondary" href="#video"
-                >Watch Video</a
-              >
-              <a class="button button-secondary" href="#citation">BibTeX</a>
-            </div>
-
-            <div class="hero-stats">
-              <article>
-                <strong>10%</strong>
-                <span>gain on the ambiguous split of FreeGraspData</span>
-              </article>
-              <article>
-                <strong>4</strong>
-                <span>task-verifiable rewards for grounded reasoning</span>
-              </article>
-              <article>
-                <strong>Top-k</strong>
-                <span>decision reformulation for candidate grasp ranking</span>
-              </article>
-            </div>
+          <div class="publication-authors">
+            <span class="author-block">Yan Li,</span>
+            <span class="author-block">Junjie Zheng,</span>
+            <span class="author-block">Yuhang He,</span>
+            <span class="author-block">Junnan Xu,</span>
+            <span class="author-block">Wenbin Lu,</span>
+            <span class="author-block">Shengjie Yang,</span>
+            <span class="author-block">Jianwei Zheng</span>
           </div>
 
-          <div class="hero-media reveal">
-            <div class="media-card">
-              <div class="media-chip">Supplementary Preview</div>
-              <img
-                src="./assets/video-poster.jpg"
-                alt="Robot arm grasping among similar objects on a tabletop."
-              />
-            </div>
-            <div class="floating-note">
-              <span>Why it matters</span>
-              <p>
-                DRPO directly optimizes spatial localization, semantic
-                alignment, intra-class disambiguation, and grasp executability.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="overview reveal">
-          <div class="section-head">
-            <p class="eyebrow">Overview</p>
-            <h2>Relational reasoning should be rewarded, not assumed.</h2>
-          </div>
-          <p>
-            Existing language-driven grasping systems often learn from a single
-            labeled target and can overfit to appearance or location shortcuts
-            in cluttered scenes. DRPO reframes grasp candidate selection as a
-            reward-guided policy optimization problem, so the model is trained
-            to explicitly distinguish between visually similar objects under
-            free-form language instructions.
-          </p>
-        </section>
-
-        <section class="abstract-section reveal" id="abstract">
-          <div class="section-head">
-            <p class="eyebrow">Abstract</p>
-            <h2>Language-guided grasping in cluttered scenes</h2>
-          </div>
-          <p>
-            Language-driven robotic grasping aims to turn free-form language
-            instructions and visual perception into executable 6-DoF actions.
-            Recent works have integrated Large Language Models (LLMs) or
-            Vision-Language Models (VLMs) into grasping frameworks, achieving
-            promising results in standard tabletop scenarios. However, their
-            accuracy drops dramatically in cluttered environments with strong
-            intra-class interference. This limitation could be attributed to a
-            fundamental objective mismatch: supervision based on a single
-            annotation neither enforces within-scene ranking among
-            near-duplicate instances nor incorporates non-differentiable
-            executability feedback.
-          </p>
-          <p>
-            To tackle these issues, we reformulate candidate selection as a
-            top-k decision process and introduce Discriminative Reward Policy
-            Optimization (DRPO), a reinforcement learning paradigm that
-            optimizes rule-verified rewards capturing spatial localization,
-            semantic alignment, intra-class disambiguation, and grasp
-            executability. Our method achieves a 10% gain on the ambiguous
-            split of FreeGraspData and demonstrates robust real-robot execution
-            in language-guided grasping scenarios.
-          </p>
-        </section>
-
-        <section class="highlights reveal" id="highlights">
-          <div class="section-head">
-            <p class="eyebrow">Highlights</p>
-            <h2>What DRPO changes</h2>
-          </div>
-          <div class="card-grid">
-            <article class="info-card">
-              <h3>Top-k policy learning</h3>
-              <p>
-                Candidate selection is reformulated as a ranked decision process
-                instead of one-shot label fitting.
-              </p>
-            </article>
-            <article class="info-card">
-              <h3>Verifiable rewards</h3>
-              <p>
-                Spatial localization, semantic alignment, intra-class
-                disambiguation, and grasp executability are all evaluated with
-                task-specific rules.
-              </p>
-            </article>
-            <article class="info-card">
-              <h3>Ambiguity-aware grasping</h3>
-              <p>
-                The policy learns to separate near-duplicate objects in crowded
-                scenes where language references are subtle and relational.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="video-section reveal" id="video">
-          <div class="section-head">
-            <p class="eyebrow">Supplementary Video</p>
-            <h2>Robot execution under language instructions</h2>
-          </div>
-          <div class="video-frame">
-            <video
-              controls
-              preload="metadata"
-              poster="./assets/video-poster.jpg"
-              playsinline
+          <div class="publication-affiliations">
+            <span class="author-block"
+              >College of Computer Science and Technology, Zhejiang University
+              of Technology</span
             >
-              <source src="./assets/drpo-demo.mp4" type="video/mp4" />
+          </div>
+
+          <div class="publication-links">
+            <a class="pill-button" href="#teaser">Teaser</a>
+            <a class="pill-button pill-button-light" href="#abstract"
+              >Abstract</a
+            >
+            <a class="pill-button pill-button-light" href="#results"
+              >Video Highlights</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="teaser-section" id="teaser">
+        <div class="container is-max-desktop reveal">
+          <div class="video-frame video-frame-large">
+            <video
+              autoplay
+              muted
+              loop
+              controls
+              playsinline
+              poster="./assets/clips/teaser.jpg"
+            >
+              <source src="./assets/clips/teaser.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
-          <p class="section-note">
-            The supplementary material video is embedded directly in the site
-            and can also be opened as a standalone file if you prefer:
-            <a href="./assets/drpo-demo.mp4">download MP4</a>.
+          <p class="teaser-caption">
+            DRPO learns to distinguish visually similar objects under free-form
+            language instructions and improves execution in cluttered grasping
+            scenes.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section class="paper-section reveal" id="paper">
-          <div class="section-head">
-            <p class="eyebrow">Paper</p>
-            <h2>Preview and download</h2>
+      <section class="section" id="abstract">
+        <div class="container is-max-abstract reveal">
+          <h2 class="section-title">Abstract</h2>
+          <div class="section-copy">
+            <p>
+              Language-driven robotic grasping aims to turn free-form language
+              instructions and visual perception into executable 6-DoF actions.
+              Recent works have integrated Large Language Models (LLMs) or
+              Vision-Language Models (VLMs) into grasping frameworks, achieving
+              promising results in standard tabletop scenarios. However, their
+              accuracy drops dramatically in cluttered environments with strong
+              intra-class interference. This limitation can stem from an
+              objective mismatch: supervision based on a single annotation
+              neither enforces within-scene ranking among near-duplicate
+              instances nor incorporates non-differentiable executability
+              feedback.
+            </p>
+            <p>
+              We reformulate candidate selection as a top-k decision process
+              and introduce Discriminative Reward Policy Optimization (DRPO), a
+              reinforcement learning paradigm that optimizes rule-verified
+              rewards capturing spatial localization, semantic alignment,
+              intra-class disambiguation, and grasp executability. The
+              supplementary results below are reorganized into short clips that
+              highlight the motivation, method, and increasingly challenging
+              grasping scenarios.
+            </p>
           </div>
-          <div class="paper-layout">
-            <a class="paper-preview" href="./assets/drpo-paper.pdf">
-              <img
-                src="./assets/paper-preview.png"
-                alt="Preview of the first page of the DRPO paper."
-              />
-            </a>
-            <div class="paper-copy">
-              <p>
-                The full manuscript is available as a PDF and linked directly
-                from this page for easy sharing.
-              </p>
-              <div class="resource-list">
-                <a class="button button-primary" href="./assets/drpo-paper.pdf"
-                  >Open PDF</a
-                >
-                <a class="button button-secondary" href="./assets/citation.bib"
-                  >Download BibTeX</a
-                >
+        </div>
+      </section>
+
+      <section class="section section-light" id="results">
+        <div class="container reveal">
+          <h2 class="section-title">Video Highlights</h2>
+          <p class="section-lead">
+            The supplementary video is split into thematic sections for easier
+            browsing, following the project-page presentation style used by
+            pages like Nerfies.
+          </p>
+
+          <div class="video-grid">
+            <article class="video-card video-card-wide" id="method">
+              <div class="video-card-copy">
+                <p class="video-card-label">Motivation and Method</p>
+                <h3>Why DRPO is needed and how the framework works</h3>
+                <p>
+                  This clip introduces the failure mode of label-fitting in
+                  ambiguous scenes, then summarizes the reward-guided policy
+                  optimization pipeline.
+                </p>
               </div>
-            </div>
+              <div class="video-frame">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  poster="./assets/clips/motivation-method.jpg"
+                >
+                  <source
+                    src="./assets/clips/motivation-method.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="citation-section reveal" id="citation">
-          <div class="section-head">
-            <p class="eyebrow">Citation</p>
-            <h2>BibTeX</h2>
-          </div>
-          <div class="code-block">
-            <button class="copy-button" type="button" data-copy-target="bibtex">
-              Copy
-            </button>
-            <pre id="bibtex"><code>@article{li_drpo_grasping,
-  title = {Discriminative Reward Policy Optimization for Relational Reasoning in Language-Driven Robotic Grasping},
-  author = {Li, Yan and Zheng, Junjie and He, Yuhang and Xu, Junnan and Lu, Wenbin and Yang, Shengjie and Zheng, Jianwei},
-  note = {Manuscript prepared for IEEE Transactions on Multimedia},
-  url = {./assets/drpo-paper.pdf}
-}</code></pre>
-          </div>
-        </section>
-      </main>
+      <section class="section" id="scenes">
+        <div class="container reveal">
+          <h2 class="section-title">Scene-Based Experiments</h2>
+          <p class="section-lead">
+            The remaining clips are organized from simpler referential commands
+            to harder relational reasoning cases in cluttered environments.
+          </p>
 
-      <footer class="site-footer">
-        <p>Project page built for DRPO.</p>
+          <div class="video-grid">
+            <article class="video-card">
+              <div class="video-card-copy">
+                <p class="video-card-label">Simple</p>
+                <h3>Single-step spatial grounding</h3>
+                <p>
+                  Short instructions with fewer distractors illustrate how the
+                  policy grounds language to a target object and grasp pose.
+                </p>
+              </div>
+              <div class="video-frame">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  poster="./assets/clips/simple-scenes.jpg"
+                >
+                  <source
+                    src="./assets/clips/simple-scenes.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <div class="video-card-copy">
+                <p class="video-card-label">Basic</p>
+                <h3>Object references with stronger interference</h3>
+                <p>
+                  These cases include richer object layouts and require cleaner
+                  separation between candidate objects in the same workspace.
+                </p>
+              </div>
+              <div class="video-frame">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  poster="./assets/clips/basic-scenes.jpg"
+                >
+                  <source
+                    src="./assets/clips/basic-scenes.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <div class="video-card-copy">
+                <p class="video-card-label">Advanced I</p>
+                <h3>Relational reasoning among multiple similar objects</h3>
+                <p>
+                  The robot must disambiguate targets by combining spatial
+                  relations with semantic grounding under heavier clutter.
+                </p>
+              </div>
+              <div class="video-frame">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  poster="./assets/clips/advanced-scenes-a.jpg"
+                >
+                  <source
+                    src="./assets/clips/advanced-scenes-a.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <div class="video-card-copy">
+                <p class="video-card-label">Advanced II</p>
+                <h3>Dense clutter with fine-grained target disambiguation</h3>
+                <p>
+                  This final section highlights more difficult scenes where
+                  near-duplicate objects and constrained placements stress the
+                  policy’s ranking behavior.
+                </p>
+              </div>
+              <div class="video-frame">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  controls
+                  playsinline
+                  poster="./assets/clips/advanced-scenes-b.jpg"
+                >
+                  <source
+                    src="./assets/clips/advanced-scenes-b.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>
+          Website adapted for the DRPO project page with a presentation style
+          inspired by academic demo sites.
+        </p>
         <a href="#top">Back to top</a>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
     <script src="./assets/script.js"></script>
   </body>

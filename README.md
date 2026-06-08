@@ -2,7 +2,8 @@
 
 Static project website for:
 
-Discriminative Reward Policy Optimization for Relational Reasoning in Language-Driven Robotic Grasping
+Discriminative Reward Policy Optimization for Relational Reasoning in
+Language-Driven Robotic Grasping
 
 ## Local preview
 
@@ -30,8 +31,9 @@ The site expects these files:
 - `index.html`
 - `assets/styles.css`
 - `assets/script.js`
-- `assets/drpo-paper.pdf`
-- `assets/drpo-demo.mp4`
-- `assets/video-poster.jpg`
-- `assets/paper-preview.png`
-- `assets/citation.bib`
+- `assets/clips/teaser.mp4`
+- `assets/clips/motivation-method.mp4`
+- `assets/clips/simple-scenes.mp4`
+- `assets/clips/basic-scenes.mp4`
+- `assets/clips/advanced-scenes-a.mp4`
+- `assets/clips/advanced-scenes-b.mp4`
