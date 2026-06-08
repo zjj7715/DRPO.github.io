@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRPO | Language-Driven Robotic Grasping</title>
+    <meta
+      name="description"
+      content="Project page for Discriminative Reward Policy Optimization for Relational Reasoning in Language-Driven Robotic Grasping."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">DRPO</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#abstract">Abstract</a>
+          <a href="#highlights">Highlights</a>
+          <a href="#video">Video</a>
+          <a href="#paper">Paper</a>
+          <a href="#citation">BibTeX</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">IEEE TMM Project Page</p>
+            <h1>
+              Discriminative Reward Policy Optimization for Relational
+              Reasoning in Language-Driven Robotic Grasping
+            </h1>
+            <p class="subtitle">
+              A reinforcement learning framework that turns top-k grasp
+              selection into a reward-driven reasoning problem for cluttered,
+              language-conditioned robotic manipulation.
+            </p>
+
+            <div class="authors">
+              <span>Yan Li</span>
+              <span>Junjie Zheng</span>
+              <span>Yuhang He</span>
+              <span>Junnan Xu</span>
+              <span>Wenbin Lu</span>
+              <span>Shengjie Yang</span>
+              <span>Jianwei Zheng</span>
+            </div>
+
+            <p class="affiliation">
+              College of Computer Science and Technology, Zhejiang University
+              of Technology
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="./assets/drpo-paper.pdf"
+                >Paper PDF</a
+              >
+              <a class="button button-secondary" href="#video"
+                >Watch Video</a
+              >
+              <a class="button button-secondary" href="#citation">BibTeX</a>
+            </div>
+
+            <div class="hero-stats">
+              <article>
+                <strong>10%</strong>
+                <span>gain on the ambiguous split of FreeGraspData</span>
+              </article>
+              <article>
+                <strong>4</strong>
+                <span>task-verifiable rewards for grounded reasoning</span>
+              </article>
+              <article>
+                <strong>Top-k</strong>
+                <span>decision reformulation for candidate grasp ranking</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-media reveal">
+            <div class="media-card">
+              <div class="media-chip">Supplementary Preview</div>
+              <img
+                src="./assets/video-poster.jpg"
+                alt="Robot arm grasping among similar objects on a tabletop."
+              />
+            </div>
+            <div class="floating-note">
+              <span>Why it matters</span>
+              <p>
+                DRPO directly optimizes spatial localization, semantic
+                alignment, intra-class disambiguation, and grasp executability.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="overview reveal">
+          <div class="section-head">
+            <p class="eyebrow">Overview</p>
+            <h2>Relational reasoning should be rewarded, not assumed.</h2>
+          </div>
+          <p>
+            Existing language-driven grasping systems often learn from a single
+            labeled target and can overfit to appearance or location shortcuts
+            in cluttered scenes. DRPO reframes grasp candidate selection as a
+            reward-guided policy optimization problem, so the model is trained
+            to explicitly distinguish between visually similar objects under
+            free-form language instructions.
+          </p>
+        </section>
+
+        <section class="abstract-section reveal" id="abstract">
+          <div class="section-head">
+            <p class="eyebrow">Abstract</p>
+            <h2>Language-guided grasping in cluttered scenes</h2>
+          </div>
+          <p>
+            Language-driven robotic grasping aims to turn free-form language
+            instructions and visual perception into executable 6-DoF actions.
+            Recent works have integrated Large Language Models (LLMs) or
+            Vision-Language Models (VLMs) into grasping frameworks, achieving
+            promising results in standard tabletop scenarios. However, their
+            accuracy drops dramatically in cluttered environments with strong
+            intra-class interference. This limitation could be attributed to a
+            fundamental objective mismatch: supervision based on a single
+            annotation neither enforces within-scene ranking among
+            near-duplicate instances nor incorporates non-differentiable
+            executability feedback.
+          </p>
+          <p>
+            To tackle these issues, we reformulate candidate selection as a
+            top-k decision process and introduce Discriminative Reward Policy
+            Optimization (DRPO), a reinforcement learning paradigm that
+            optimizes rule-verified rewards capturing spatial localization,
+            semantic alignment, intra-class disambiguation, and grasp
+            executability. Our method achieves a 10% gain on the ambiguous
+            split of FreeGraspData and demonstrates robust real-robot execution
+            in language-guided grasping scenarios.
+          </p>
+        </section>
+
+        <section class="highlights reveal" id="highlights">
+          <div class="section-head">
+            <p class="eyebrow">Highlights</p>
+            <h2>What DRPO changes</h2>
+          </div>
+          <div class="card-grid">
+            <article class="info-card">
+              <h3>Top-k policy learning</h3>
+              <p>
+                Candidate selection is reformulated as a ranked decision process
+                instead of one-shot label fitting.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Verifiable rewards</h3>
+              <p>
+                Spatial localization, semantic alignment, intra-class
+                disambiguation, and grasp executability are all evaluated with
+                task-specific rules.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Ambiguity-aware grasping</h3>
+              <p>
+                The policy learns to separate near-duplicate objects in crowded
+                scenes where language references are subtle and relational.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="video-section reveal" id="video">
+          <div class="section-head">
+            <p class="eyebrow">Supplementary Video</p>
+            <h2>Robot execution under language instructions</h2>
+          </div>
+          <div class="video-frame">
+            <video
+              controls
+              preload="metadata"
+              poster="./assets/video-poster.jpg"
+              playsinline
+            >
+              <source src="./assets/drpo-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="section-note">
+            The supplementary material video is embedded directly in the site
+            and can also be opened as a standalone file if you prefer:
+            <a href="./assets/drpo-demo.mp4">download MP4</a>.
+          </p>
+        </section>
+
+        <section class="paper-section reveal" id="paper">
+          <div class="section-head">
+            <p class="eyebrow">Paper</p>
+            <h2>Preview and download</h2>
+          </div>
+          <div class="paper-layout">
+            <a class="paper-preview" href="./assets/drpo-paper.pdf">
+              <img
+                src="./assets/paper-preview.png"
+                alt="Preview of the first page of the DRPO paper."
+              />
+            </a>
+            <div class="paper-copy">
+              <p>
+                The full manuscript is available as a PDF and linked directly
+                from this page for easy sharing.
+              </p>
+              <div class="resource-list">
+                <a class="button button-primary" href="./assets/drpo-paper.pdf"
+                  >Open PDF</a
+                >
+                <a class="button button-secondary" href="./assets/citation.bib"
+                  >Download BibTeX</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="citation-section reveal" id="citation">
+          <div class="section-head">
+            <p class="eyebrow">Citation</p>
+            <h2>BibTeX</h2>
+          </div>
+          <div class="code-block">
+            <button class="copy-button" type="button" data-copy-target="bibtex">
+              Copy
+            </button>
+            <pre id="bibtex"><code>@article{li_drpo_grasping,
+  title = {Discriminative Reward Policy Optimization for Relational Reasoning in Language-Driven Robotic Grasping},
+  author = {Li, Yan and Zheng, Junjie and He, Yuhang and Xu, Junnan and Lu, Wenbin and Yang, Shengjie and Zheng, Jianwei},
+  note = {Manuscript prepared for IEEE Transactions on Multimedia},
+  url = {./assets/drpo-paper.pdf}
+}</code></pre>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Project page built for DRPO.</p>
+        <a href="#top">Back to top</a>
+      </footer>
+    </div>
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
